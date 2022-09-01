@@ -19,20 +19,17 @@
             border: 8px solid #9486FF;
             box-sizing: border-box;
         }
-
         .container {
             position: relative;
             height: 100%;
             width: 100%;
         }
-
         .content {
             position: absolute;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
         }
-
         h1 {
             margin-bottom: 24px;
         }
@@ -51,9 +48,8 @@
     </div>
     <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
     <script>
-
-        let yoko_nagasa = $('.yoko_nagasa');
-        let tate_nagasa = $('.tate_nagasa');
+        const yoko_nagasa = $('.yoko_nagasa');
+        const tate_nagasa = $('.tate_nagasa');
 
         $(window).on('load resize', function(){
             let device_yoko_nagasa = $('.wrapper').width();
