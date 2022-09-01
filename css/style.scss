@@ -39,7 +39,21 @@ h1 {
 .fl_content {
     display: flex;
     align-items: baseline;
+    justify-content: space-between;
+    .item {
+        min-width: 60px;
+
+        &:first-child {
+            margin-right: 20px;
+        }
+    }
+
+
 }
 .ta_right {
     text-align: right;
+}
+
+.nagasa_wrap {
+    margin-bottom: 20px;
 }
