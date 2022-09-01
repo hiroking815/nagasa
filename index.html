@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>nagasa</title>
+    <link rel="stylesheet" href="https://use.typekit.net/pmh4jvm.css">
     <style>
         * {
             margin: 0;
@@ -31,9 +32,19 @@
             transform: translate(-50%, -50%);
         }
         h1 {
+            font-size: 3rem;
+            text-align: center;
             margin-bottom: 24px;
+            font-family: pique-web, sans-serif;
+            font-weight: 900;
+            font-style: normal;
+        }
+        .nagasa {
+            font-weight: 700;
+            font-size: 1.5rem;
         }
     </style>
+    <link rel="icon" href="./n.png" />
 </head>
 <body>
     <div class="wrapper" id="app">
@@ -41,8 +52,8 @@
         <div class="container">
             <div class="content">
                 <h1>nagasa</h1>
-                <p class="yoko">横幅：<span class="yoko_nagasa"></span></p>
-                <p class="tate">縦幅：<span class="tate_nagasa"></span></p>
+                <p class="moji">横幅：<span class="yoko_nagasa nagasa"></span> px</p>
+                <p class="moji">縦幅：<span class="tate_nagasa nagasa"></span> px</p>
             </div>
         </div>
     </div>
@@ -52,8 +63,8 @@
         const tate_nagasa = $('.tate_nagasa');
 
         $(window).on('load resize', function(){
-            let device_yoko_nagasa = $('.wrapper').width();
-            let device_tate_nagasa = $('.wrapper').height();
+            let device_yoko_nagasa = $('.wrapper').outerWidth();
+            let device_tate_nagasa = $('.wrapper').outerHeight();
             yoko_nagasa.html(device_yoko_nagasa);
             tate_nagasa.html(device_tate_nagasa);
         });
