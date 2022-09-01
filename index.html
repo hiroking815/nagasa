@@ -5,74 +5,46 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>nagasa | デバイス、ブラウザの幅を測る</title>
+    <head prefix="og: https://ogp.me/ns#">
+    <meta property="og:url" content="https://nagasa.webitworks.jp/" />
+    <meta property="og:type" content="Webサービス" />
+    <meta property="og:title" content="nagasa | デバイス、ブラウザの幅を測る" />
+    <meta property="og:description" content="デバイスやブラウザの幅を測ることができます" />
+    <meta property="og:site_name" content="nagasa" />
+    <meta property="og:image" content=" サムネイル画像のURL" />
     <link rel="stylesheet" href="https://use.typekit.net/pmh4jvm.css">
-    <style>
-        * {
-            margin: 0;
-            font-family: sans-serif;
-        }
-        /* html,body {
-            height: 100%;
-            overflow: hidden;
-        } */
-        .wrapper {
-            width: 100vw;
-            height: 100vh;
-            height: 100dvh;
-            border: 8px solid #9486FF;
-            box-sizing: border-box;
-        }
-        .container {
-            position: relative;
-            height: 100%;
-            width: 100%;
-        }
-        .content {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-        }
-        h1 {
-            font-size: 3rem;
-            text-align: center;
-            margin-bottom: 24px;
-            font-family: pique-web, sans-serif;
-            font-weight: 900;
-            font-style: normal;
-        }
-        .nagasa {
-            font-weight: 700;
-            font-size: 1.5rem;
-        }
-    </style>
+    <link rel="stylesheet" href="./css/style.css">
     <link rel="icon" href="./n.png" />
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-WPQ3HHW');</script>
+    <!-- End Google Tag Manager -->
 </head>
 <body>
-    <div class="wrapper" id="app">
-
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WPQ3HHW"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div class="wrapper">
         <div class="container">
             <div class="content">
                 <h1>nagasa</h1>
-                <p class="moji">横幅：<span class="yoko_nagasa nagasa"></span> px</p>
-                <p class="moji">縦幅：<span class="tate_nagasa nagasa"></span> px</p>
+                <div class="fl_content">
+                    <p class="moji item">横幅</p><p class="ta_right"><span class="yoko_nagasa nagasa"></span> px</p>
+                </div>
+                <div class="fl_content">
+                    <p class="moji item">縦幅</p><p class="ta_right"></p><span class="tate_nagasa nagasa"></span> px</p>
+                </div>
             </div>
         </div>
     </div>
+
     <script src="https://code.jquery.com/jquery-3.6.1.min.js" integrity="sha256-o88AwQnZB+VDvE9tvIXrMQaPlFFSUTR+nldQm1LuPXQ=" crossorigin="anonymous"></script>
-    <script>
-        const yoko_nagasa = $('.yoko_nagasa');
-        const tate_nagasa = $('.tate_nagasa');
-
-        $(window).on('load resize', function(){
-            let device_yoko_nagasa = $('.wrapper').outerWidth();
-            let device_tate_nagasa = $('.wrapper').outerHeight();
-            yoko_nagasa.html(device_yoko_nagasa);
-            tate_nagasa.html(device_tate_nagasa);
-        });
-
-    </script>
-
+    <script src="./js/ua.js"></script>
+    <script src="./js/app.js"></script>
 </body>
 
 </html>
